@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="autobase_apelsin@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="autobase_apelsin">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="auto"/>
+    <schema id="4" parent="1" name="autob"/>
+    <schema id="5" parent="1" name="autobase"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="sys"/>
+    <table id="10" parent="2" name="auto"/>
+    <table id="11" parent="2" name="role"/>
+    <table id="12" parent="2" name="status"/>
+    <table id="13" parent="2" name="trip"/>
+    <table id="14" parent="2" name="users"/>
+    <column id="15" parent="10" name="idAuto">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="10" name="mark">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="10" name="model">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="10" name="isOk">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="10" name="quantity_auto">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="users_idUsers">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="21" parent="10" name="fk_auto_users1_idx">
+      <ColNames>users_idUsers</ColNames>
+    </index>
+    <index id="22" parent="10" name="idAuto_UNIQUE">
+      <ColNames>idAuto</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="10" name="PRIMARY">
+      <ColNames>idAuto</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="24" parent="10" name="idAuto_UNIQUE">
+      <ColNames>idAuto</ColNames>
+      <UnderlyingIndexName>idAuto_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="25" parent="10" name="fk_auto_users1">
+      <ColNames>users_idUsers</ColNames>
+      <RefSchemaName>autobase_apelsin</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>idUsers</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="26" parent="11" name="idRole">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="11" name="name_role">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="28" parent="11" name="PRIMARY">
+      <ColNames>idRole</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="12" name="idstatus">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="12" name="status_name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="31" parent="12" name="idstatus_UNIQUE">
+      <ColNames>idstatus</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="12" name="PRIMARY">
+      <ColNames>idstatus</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="33" parent="12" name="idstatus_UNIQUE">
+      <ColNames>idstatus</ColNames>
+      <UnderlyingIndexName>idstatus_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="34" parent="13" name="idTrip">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="13" name="date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="13" name="idDriver_Users">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="13" name="quantity_trip">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="13" name="departure_from">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="13" name="destination_to">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="13" name="status_idstatus">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;2&apos;</DefaultExpression>
+    </column>
+    <index id="41" parent="13" name="fk_trip_status1_idx">
+      <ColNames>status_idstatus</ColNames>
+    </index>
+    <index id="42" parent="13" name="fk_Trip_Users_idx">
+      <ColNames>idDriver_Users</ColNames>
+    </index>
+    <index id="43" parent="13" name="idTrip_UNIQUE">
+      <ColNames>idTrip</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="13" name="PRIMARY">
+      <ColNames>idTrip</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="45" parent="13" name="idTrip_UNIQUE">
+      <ColNames>idTrip</ColNames>
+      <UnderlyingIndexName>idTrip_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="46" parent="13" name="fk_Trip_Users">
+      <ColNames>idDriver_Users</ColNames>
+      <RefSchemaName>autobase_apelsin</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>idUsers</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <foreign-key id="47" parent="13" name="fk_trip_status1">
+      <ColNames>status_idstatus</ColNames>
+      <RefSchemaName>autobase_apelsin</RefSchemaName>
+      <RefTableName>status</RefTableName>
+      <RefColNames>idstatus</RefColNames>
+      <OnUpdate>update</OnUpdate>
+    </foreign-key>
+    <column id="48" parent="14" name="idUsers">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="14" name="username">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="14" name="password">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="14" name="name">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="14" name="surname">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="14" name="Role_idRole">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;2&apos;</DefaultExpression>
+    </column>
+    <column id="54" parent="14" name="auto_idauto">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="55" parent="14" name="trip_idtrip">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="56" parent="14" name="fk_Users_Role1_idx">
+      <ColNames>Role_idRole</ColNames>
+    </index>
+    <index id="57" parent="14" name="fk_Users_auto_idx">
+      <ColNames>auto_idauto</ColNames>
+    </index>
+    <key id="58" parent="14" name="PRIMARY">
+      <ColNames>idUsers</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="14" name="fk_Users_Role1">
+      <ColNames>Role_idRole</ColNames>
+      <RefSchemaName>autobase_apelsin</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>idRole</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

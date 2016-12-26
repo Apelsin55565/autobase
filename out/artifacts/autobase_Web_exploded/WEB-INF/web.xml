@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Autobase</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>page</servlet-name>
+        <jsp-file>/WEB-INF/jsp/page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>page</servlet-name>
+        <url-pattern>/page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logination</servlet-name>
+        <jsp-file>/WEB-INF/jsp/logination.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logination</servlet-name>
+        <url-pattern>/logination</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>signin</servlet-name>
+        <jsp-file>/WEB-INF/jsp/signin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>signin</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>success</servlet-name>
+        <jsp-file>/WEB-INF/jsp/success.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>success</servlet-name>
+        <url-pattern>/success</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>navbar</servlet-name>
+        <jsp-file>/WEB-INF/jsp/navbar.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>navbar</servlet-name>
+        <url-pattern>/navbar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>footer</servlet-name>
+        <jsp-file>/WEB-INF/jsp/footer.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>footer</servlet-name>
+        <url-pattern>/footer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>alldrivers</servlet-name>
+        <jsp-file>/WEB-INF/jsp/alldrivers.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>alldrivers</servlet-name>
+        <url-pattern>/alldrivers</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>allauto</servlet-name>
+        <jsp-file>/WEB-INF/jsp/allauto.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allauto</servlet-name>
+        <url-pattern>/allauto</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>create_new_trip</servlet-name>
+        <jsp-file>/WEB-INF/jsp/create_new_trip.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_new_trip</servlet-name>
+        <url-pattern>/create_new_trip</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>create_new_auto</servlet-name>
+        <jsp-file>/WEB-INF/jsp/create_new_auto.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_new_auto</servlet-name>
+        <url-pattern>/create_new_auto</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>userauto</servlet-name>
+        <jsp-file>/WEB-INF/jsp/userauto.jsp</jsp-file>
+    </servlet>
+<servlet-mapping>
+    <servlet-name>userauto</servlet-name>
+    <url-pattern>/userauto</url-pattern>
+</servlet-mapping>
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>by.bsu.kvach.autobase.filter.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
